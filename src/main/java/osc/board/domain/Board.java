@@ -13,39 +13,40 @@ import java.time.LocalDateTime;
 @Table(name = "board")
 public class Board extends BaseTime{
 
+
     @Id //pk맵핑
     @GeneratedValue(strategy = GenerationType.IDENTITY) //pk값 알아서 생성
     @Column(name = "id", nullable = false)
-    private Long id;
+    private Long num;
 
     @Column(nullable = false)
-    String writer;
+    String writeName;
 
     @Column(nullable = false)
     String title;
 
     @Column(nullable = false)
-    String content;
+    String contents;
 
     @Builder
     public Board(
-            Long id,
-            String writer,
+            Long num,
+            String writeName,
             String title,
-            String content,
-            LocalDateTime createDate,
-            LocalDateTime updateDate) {
-        this.id = id;
-        this.writer = writer;
+            String contents,
+            LocalDateTime writeDate,
+            LocalDateTime modifyDate) {
+        this.num = num;
+        this.writeName = writeName;
         this.title = title;
-        this.content = content;
-        createDate = createDate;
-        updateDate = updateDate;
+        this.contents = contents;
+        super.writeDate = writeDate;
+        super.modifyDate = modifyDate;
     }
 
     public void update(BoardDto boardDto){
         this.title = boardDto.getTitle();
-        this.content = boardDto.getContent();
-        this.writer = boardDto.getWriter();
+        this.contents = boardDto.getContents();
+        this.writeName = boardDto.getWriteName();
     }
 }

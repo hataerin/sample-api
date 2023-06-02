@@ -4,7 +4,7 @@ GET http://localhost:8000/boards
 
 ###
 # 게시글 상세 조회
-GET http://localhost:8000/boards/4
+GET http://localhost:8000/boards/2
 
 ###
 # 게시글 등록
@@ -12,25 +12,25 @@ POST http://localhost:8000/boards
 Content-Type: application/json
 
 {
-    "writer": "홍길동",
-    "title": "제목입니다",
-    "content": "내용입니다"
+    "writeName": "가나다",
+    "title": "라라라ㅏㄹ",
+    "contents": "내용용"
 }
 
 ###
 # 게시글 수정
-PUT http://localhost:8000/boards/4
+PUT http://localhost:8000/boards/6
 Content-Type: application/json
 
 {
-"writer": "하태린린린",
-"title": "제목입니다",
-"content": "내용입니다"
+"writeName": "김둘리",
+"title": "호이호이",
+"contents": "메롱"
 }
 
 ###
 # 게시글 삭제
-DELETE http://localhost:8000/boards/4
+DELETE http://localhost:8000/boards/2
 
 
 

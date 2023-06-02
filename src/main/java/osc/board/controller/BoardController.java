@@ -39,7 +39,7 @@ public class BoardController {
 
 
     //게시글 수정
-    @PutMapping("/{id}")
+    @PostMapping("/{id}")
     public Board update(@PathVariable Long id, @RequestBody BoardDto boardDto) {
         return boardService.update(id, boardDto);
     }

@@ -47,23 +47,4 @@ public class BoardService {
         this.boardRepository.deleteById(id);
     }
 
-/*    public Board update(Long id, BoardDto boardDto) {
-        boardRepository.findById(id);
-        if (isExist(id)) {
-            return boardRepository.save(boardDto.toEntity());
-        } else {
-            System.out.println("해당하는 게시글이 없습니다");
-            return null;
-        }
-    }
-
-    public Boolean isExist(Long id) {
-        Optional<Board> board = this.boardRepository.findById(id);
-        if (board.isEmpty()) {
-            return false;
-        } else {
-            return true;
-        }
-    }*/
-
 }
